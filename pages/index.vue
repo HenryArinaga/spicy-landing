@@ -18,20 +18,20 @@
 
     <section class="hero section-shell">
       <div class="hero-copy">
-        <p class="eyebrow">Spice tolerance training</p>
-        <h1>Train your spice tolerance, one bite at a time.</h1>
+        <p class="eyebrow">🌶️ Spice tolerance training</p>
+        <h1>Train your taste buds, one bite at a time.</h1>
         <p class="hero-text">
-          Spicy recommends foods matched to your current heat lane, tracks how each meal felt,
-          and helps you build confidence without overdoing it.
+          Spicy recommends foods matched to your heat lane, tracks how each meal felt,
+          and helps you build confidence without over doing it.
         </p>
         <div class="hero-actions">
           <a class="button primary" :href="discordUrl" target="_blank" rel="noopener noreferrer">Join Discord</a>
           <a class="button secondary" href="#howitworks">See how it works</a>
         </div>
-        <p class="hero-note">Join Discord for TestFlight access and launch updates.</p>
+        <p class="hero-note">🔥 Join Discord for TestFlight access and launch updates.</p>
         <dl class="hero-stats">
           <div>
-            <dt>1 to 10</dt>
+            <dt>1–10</dt>
             <dd>heat lane tracking</dd>
           </div>
           <div>
@@ -46,7 +46,6 @@
       </div>
 
       <div class="hero-visual" aria-label="Spicy app interface previews">
-        <div class="food-plate"></div>
         <AppPhone class="phone-main" screen="home" />
         <AppPhone class="phone-side" screen="log" />
       </div>
@@ -59,7 +58,7 @@
       </div>
       <div class="feature-bento">
         <article class="bento-card bento-large">
-          <p class="bento-label">Dynamic tolerance</p>
+          <p class="bento-label">🎯 Dynamic tolerance</p>
           <h3>Your heat lane changes as you log real meals.</h3>
           <p>
             Spicy learns from your perceived heat, reaction, recovery time, and notes so your
@@ -74,7 +73,7 @@
           </div>
         </article>
         <article class="bento-card bento-tall">
-          <p class="bento-label">Smart recommendation</p>
+          <p class="bento-label">🍜 Smart recommendation</p>
           <h3>One clear next food.</h3>
           <p>
             Get a dish that sits near your current lane instead of guessing from vague menu labels
@@ -136,7 +135,7 @@
       </div>
       <div class="curve-card">
         <div>
-          <p class="eyebrow">Tolerance curve</p>
+          <p class="eyebrow">📈 Tolerance curve</p>
           <h3>Progress should look steady, not spiky.</h3>
           <p>
             The goal is not to chase the hottest possible meal. Spicy helps you notice when your
@@ -157,7 +156,7 @@
 
     <section id="screens" class="section-shell screens-section">
       <div class="section-heading">
-        <p class="eyebrow">Representative app previews</p>
+        <p class="eyebrow">📱 Representative app previews</p>
         <h2>Food-first screens that show the core Spicy flow.</h2>
       </div>
       <div class="screen-grid">
@@ -169,7 +168,7 @@
 
     <section class="section-shell food-section">
       <div>
-        <p class="eyebrow">Restaurant discovery</p>
+        <p class="eyebrow">🍽️ Restaurant discovery</p>
         <h2>Find the dish worth trying before you order.</h2>
         <p>
           Browse community-rated spicy items, compare average heat, and submit new restaurant
@@ -191,7 +190,7 @@
 
     <section id="pricing" class="section-shell pricing-section">
       <div class="section-heading narrow">
-        <p class="eyebrow">Pricing</p>
+        <p class="eyebrow">💎 Pricing</p>
         <h2>Start free. Upgrade when you want deeper guidance.</h2>
       </div>
       <div class="pricing-grid">
@@ -209,7 +208,7 @@
           <a class="button secondary" :href="discordUrl" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         </article>
         <article class="price-card featured-price">
-          <p class="eyebrow">Most useful</p>
+          <p class="eyebrow">🔥 Most useful</p>
           <h3>Spicy Plus</h3>
           <p class="price">$4.99 <span>/ month</span></p>
           <p>More personalized coaching for people using Spicy regularly.</p>
@@ -243,7 +242,7 @@
 
     <section id="safety" class="section-shell safety-section">
       <div>
-        <p class="eyebrow">Safety first</p>
+        <p class="eyebrow">⚠️ Safety first</p>
         <h2>Spicy is guidance, not medical advice.</h2>
       </div>
       <p>
@@ -255,7 +254,7 @@
 
     <section id="faq" class="section-shell faq-section">
       <div class="section-heading narrow">
-        <p class="eyebrow">FAQ</p>
+        <p class="eyebrow">❓ FAQ</p>
         <h2>Good questions before the first bite.</h2>
       </div>
       <div class="faq-categories">
@@ -286,7 +285,7 @@
           <span class="brand-mark">S</span>
           <span>Spicy</span>
         </NuxtLink>
-        <p>Train your taste buds with practical recommendations and calm progress tracking.</p>
+        <p>Train your taste buds with practical recommendations and calm progress tracking. 🌶️</p>
       </div>
       <nav aria-label="Legal navigation">
         <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
@@ -308,7 +307,7 @@ const assetPath = (path: string) => `${appBase.replace(/\/$/, '')}${path}`
 const siteUrl = config.public.siteUrl.replace(/\/$/, '')
 const discordUrl = 'https://discord.gg/2n4uSk3Tqj'
 const xUrl = 'https://x.com/Spicylabs_'
-const pageTitle = 'Spicy | Train your spice tolerance, one bite at a time'
+const pageTitle = 'Spicy | Train your spice tolerance, one bite at a time 🌶️'
 const pageDescription =
   'Spicy is a mobile app for building spice tolerance with personalized food recommendations, heat logging, AI coach insights, restaurant discovery, and safety minded progress.'
 const pageUrl = `${siteUrl}/`
@@ -330,22 +329,22 @@ useSeoMeta({
 
 const features = [
   {
-    icon: 'AI coach',
+    icon: '🧠 AI coach',
     title: 'Coach insights',
     body: 'Turn recent logs into practical next targets, trends, and safety minded reminders.'
   },
   {
-    icon: 'Photo scan',
+    icon: '📸 Photo scan',
     title: 'Photo identification',
     body: 'Scan or upload a food photo to speed up logging with an AI assisted guess.'
   },
   {
-    icon: 'Restaurants',
+    icon: '🍽️ Restaurants',
     title: 'Restaurant discovery',
     body: 'Find approved spicy items near you with community heat ratings and item details.'
   },
   {
-    icon: 'Quick log',
+    icon: '⚡ Quick log',
     title: 'Fast meal logging',
     body: 'Capture heat, reaction, recovery time, notes, and source without turning dinner into homework.'
   }
@@ -399,22 +398,22 @@ const comparisonRows = [
 
 const faqCategories = [
   {
-    icon: 'Start',
+    icon: '🚀',
     title: 'Getting started',
     body: 'Assessment, onboarding, and your first recommendation.'
   },
   {
-    icon: 'Lane',
+    icon: '🌶️',
     title: 'Heat lane',
     body: 'How Spicy estimates tolerance and tracks progress.'
   },
   {
-    icon: 'Data',
+    icon: '🔒',
     title: 'Privacy',
     body: 'How food logs, photos, and account details are handled.'
   },
   {
-    icon: 'Plus',
+    icon: '💎',
     title: 'Spicy Plus',
     body: 'Subscription features, billing, and cancellation.'
   }
@@ -498,75 +497,16 @@ useHead({
             }
           ],
           featureList: [
-            'Spice tolerance assessment',
-            'Personal heat lane tracking',
-            'Food and reaction logging',
+            'Heat lane tracking',
+            'Personalized food recommendations',
             'AI coach insights',
-            'Restaurant item discovery',
-            'Photo based food identification'
+            'Food logging',
+            'Photo food identification',
+            'Restaurant discovery'
           ]
-        },
-        {
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: faqs.map((item) => ({
-            '@type': 'Question',
-            name: item.question,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: item.answer
-            }
-          }))
         }
       ])
     }
   ]
-})
-
-onMounted(() => {
-  const animatedItems = document.querySelectorAll(
-    [
-      '.hero-copy',
-      '.hero-visual',
-      '.feature-bento > *',
-      '.timeline .step-card',
-      '.curve-card',
-      '.screen-grid > *',
-      '.food-section > *',
-      '.pricing-grid > *',
-      '.comparison-card',
-      '.safety-section',
-      '.faq-categories > *',
-      '.faq-list details',
-      '.support-card'
-    ].join(', ')
-  )
-
-  if (!('IntersectionObserver' in window)) {
-    animatedItems.forEach((item) => item.classList.add('is-visible'))
-    return
-  }
-
-  animatedItems.forEach((item, index) => {
-    item.classList.add('reveal')
-    ;(item as HTMLElement).style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`)
-  })
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible')
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    {
-      threshold: 0.18,
-      rootMargin: '0px 0px -8% 0px'
-    }
-  )
-
-  animatedItems.forEach((item) => observer.observe(item))
 })
 </script>
