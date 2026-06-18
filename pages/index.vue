@@ -18,11 +18,11 @@
 
     <section class="hero section-shell">
       <div class="hero-copy">
-        <p class="eyebrow">Spice tolerance training</p>
-        <h1>Train your spice tolerance, one bite at a time.</h1>
+        <p class="eyebrow">Spice tolerance dashboard</p>
+        <h1>Track heat, log meals, build tolerance with clear data.</h1>
         <p class="hero-text">
-          Spicy recommends foods matched to your current heat lane, tracks how each meal felt,
-          and helps you build confidence without overdoing it.
+          Spicy turns spicy food into a simple progress dashboard: current heat lane, recent logs,
+          recovery trends, and the next meal that fits your tolerance.
         </p>
         <div class="hero-actions">
           <a class="button primary" :href="discordUrl" target="_blank" rel="noopener noreferrer">Join Discord</a>
@@ -31,22 +31,43 @@
         <p class="hero-note">Join Discord for TestFlight access and launch updates.</p>
         <dl class="hero-stats">
           <div>
-            <dt>1 to 10</dt>
-            <dd>heat lane tracking</dd>
+            <dt>4.8</dt>
+            <dd>current heat lane</dd>
           </div>
           <div>
-            <dt>AI</dt>
-            <dd>coach insights</dd>
+            <dt>12</dt>
+            <dd>logged meals this month</dd>
           </div>
           <div>
-            <dt>18+</dt>
-            <dd>adult food guidance</dd>
+            <dt>18m</dt>
+            <dd>median recovery time</dd>
           </div>
         </dl>
       </div>
 
-      <div class="hero-visual" aria-label="Spicy app interface previews">
-        <div class="food-plate"></div>
+      <div class="hero-visual dashboard-visual" aria-label="Spicy app dashboard previews">
+        <div class="dashboard-card tolerance-card">
+          <div>
+            <span>Weekly tolerance</span>
+            <strong>+0.6</strong>
+          </div>
+          <div class="mini-bars" aria-hidden="true">
+            <i style="height: 38%"></i>
+            <i style="height: 45%"></i>
+            <i style="height: 48%"></i>
+            <i style="height: 58%"></i>
+            <i style="height: 62%"></i>
+          </div>
+        </div>
+        <div class="dashboard-card macro-card">
+          <div class="progress-ring" style="--progress: 68">
+            <span>68%</span>
+          </div>
+          <div>
+            <span>Comfort match</span>
+            <strong>Chili garlic noodles</strong>
+          </div>
+        </div>
         <AppPhone class="phone-main" screen="home" />
         <AppPhone class="phone-side" screen="log" />
       </div>
@@ -54,37 +75,51 @@
 
     <section id="features" class="section-shell feature-band">
       <div class="section-heading">
-        <p class="eyebrow">Built for steady progress</p>
-        <h2>Know what to try next, how hot it felt, and when to level up.</h2>
+        <p class="eyebrow">Data-forward tolerance training</p>
+        <h2>A calmer dashboard for what you ate, how it felt, and what to try next.</h2>
       </div>
       <div class="feature-bento">
         <article class="bento-card bento-large">
-          <p class="bento-label">Dynamic tolerance</p>
-          <h3>Your heat lane changes as you log real meals.</h3>
+          <p class="bento-label">Progress dashboard</p>
+          <h3>See your current heat lane, trend, and recovery in one view.</h3>
           <p>
             Spicy learns from your perceived heat, reaction, recovery time, and notes so your
             recommendations stay close to what your body can actually handle.
           </p>
-          <div class="lane-preview">
+          <div class="metric-strip">
             <div>
               <span>Current lane</span>
-              <strong>4.8 / 10</strong>
+              <strong>4.8</strong>
+            </div>
+            <div>
+              <span>7 day trend</span>
+              <strong>+0.3</strong>
+            </div>
+            <div>
+              <span>Recovery</span>
+              <strong>18m</strong>
+            </div>
+          </div>
+          <div class="lane-preview">
+            <div>
+              <span>Lane progress</span>
+              <strong>48%</strong>
             </div>
             <div class="meter"><span style="width: 48%"></span></div>
           </div>
         </article>
         <article class="bento-card bento-tall">
-          <p class="bento-label">Smart recommendation</p>
-          <h3>One clear next food.</h3>
+          <p class="bento-label">Next best meal</p>
+          <h3>One clear recommendation with context.</h3>
           <p>
             Get a dish that sits near your current lane instead of guessing from vague menu labels
             like mild, medium, or hot.
           </p>
           <div class="recommendation-mini">
-            <div class="mini-photo ramen"></div>
+            <div class="match-score">92</div>
             <div>
               <strong>Spicy miso ramen</strong>
-              <span>Good match · lane 5.1</span>
+              <span>Good match · lane 5.1 · +0.3 step</span>
             </div>
           </div>
         </article>
@@ -99,7 +134,7 @@
     <section id="howitworks" class="section-shell steps-section">
       <div class="section-heading narrow">
         <p class="eyebrow">How it works</p>
-        <h2>A simple loop for building tolerance without rushing it.</h2>
+        <h2>A simple logging loop that makes the next recommendation smarter.</h2>
         <p>
           Spicy keeps the process practical: understand your baseline, try something nearby, then
           log what happened so the next recommendation gets smarter.
@@ -114,9 +149,9 @@
           </div>
           <div class="step-art" :class="step.art">
             <div v-if="step.art === 'quiz'" class="quiz-art">
-              <span>Mild</span>
-              <span>Medium</span>
-              <span>Hot</span>
+              <span>Baseline lane 3.9</span>
+              <span>Preferred cuisines</span>
+              <span>Safety limits</span>
             </div>
             <div v-else-if="step.art === 'food'" class="food-art">
               <div class="mini-photo tacos"></div>
@@ -158,7 +193,7 @@
     <section id="screens" class="section-shell screens-section">
       <div class="section-heading">
         <p class="eyebrow">Representative app previews</p>
-        <h2>Food-first screens that show the core Spicy flow.</h2>
+        <h2>Dashboard screens for recommendations, coaching, and restaurant decisions.</h2>
       </div>
       <div class="screen-grid">
         <AppPhone screen="home" />
@@ -170,10 +205,10 @@
     <section class="section-shell food-section">
       <div>
         <p class="eyebrow">Restaurant discovery</p>
-        <h2>Find the dish worth trying before you order.</h2>
+        <h2>Compare heat data before you order.</h2>
         <p>
-          Browse community-rated spicy items, compare average heat, and submit new restaurant
-          finds with photos so the best local options surface for everyone.
+          Browse community-rated spicy items, compare average heat, recovery notes, and match score,
+          then log the meal without starting from a blank form.
         </p>
       </div>
       <div class="restaurant-card">
@@ -184,7 +219,7 @@
         <div>
           <p class="eyebrow">Community pick</p>
           <h3>Chili crisp noodles</h3>
-          <p>Average heat 7.4 / 10 · estimated 42,000 SHU</p>
+          <p>Average heat 7.4 / 10 · 86% match · estimated 42,000 SHU</p>
         </div>
       </div>
     </section>
