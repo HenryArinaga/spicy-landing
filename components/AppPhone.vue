@@ -5,7 +5,7 @@
       <span>●●●</span>
     </div>
     <div v-if="screen === 'home'" class="phone-screen">
-      <p class="phone-kicker">🔥 TODAY'S RECOMMENDATION</p>
+      <p class="phone-kicker">TODAY'S RECOMMENDATION</p>
       <h3>Chili garlic noodles</h3>
       <div class="phone-food home-food"></div>
       <div class="lane-row">
@@ -17,20 +17,20 @@
       <button>Log Recommended Food</button>
     </div>
     <div v-else-if="screen === 'log'" class="phone-screen">
-      <p class="phone-kicker">📝 LOG FOOD</p>
+      <p class="phone-kicker">LOG FOOD</p>
       <h3>How hot did it feel?</h3>
       <div class="heat-number">6.5</div>
       <div class="slider-track"><span></span></div>
       <div class="chip-row">
-        <span>😅 Sweaty</span>
-        <span>🔥 Good burn</span>
+        <span>Sweaty</span>
+        <span>Good burn</span>
       </div>
       <label>Recovery time</label>
       <div class="input-line">18 minutes</div>
       <button>Save Log</button>
     </div>
     <div v-else-if="screen === 'coach'" class="phone-screen">
-      <p class="phone-kicker">🧠 AI COACH + METRICS</p>
+      <p class="phone-kicker">AI COACH + METRICS</p>
       <h3>Sharp progress, steady pace.</h3>
       <div class="coach-card">
         <span>Trend</span>
@@ -43,7 +43,7 @@
       <p class="phone-note">Stay near lane 5 this week and avoid stacking high-heat meals.</p>
     </div>
     <div v-else class="phone-screen">
-      <p class="phone-kicker">🍽️ NEARBY ITEMS</p>
+      <p class="phone-kicker">NEARBY ITEMS</p>
       <h3>What to try here</h3>
       <div class="mini-restaurant">
         <div class="phone-food restaurant-food"></div>

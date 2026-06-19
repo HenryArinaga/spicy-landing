@@ -950,7 +950,7 @@ li {
 }
 
 li::before {
-  content: "✓";
+  content: "•";
   margin-right: 8px;
   color: var(--green);
   font-weight: 950;

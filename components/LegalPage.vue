@@ -8,7 +8,7 @@
       <NuxtLink class="nav-cta" to="/">Back to site</NuxtLink>
     </header>
     <article class="legal-card">
-      <p class="eyebrow">📄 Legal</p>
+      <p class="eyebrow">Legal</p>
       <h1>{{ title }}</h1>
       <p class="legal-updated">{{ updated }}</p>
       <section v-for="section in sections" :key="section.heading">

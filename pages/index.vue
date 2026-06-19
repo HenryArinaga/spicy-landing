@@ -18,7 +18,7 @@
 
     <section class="hero section-shell">
       <div class="hero-copy">
-        <p class="eyebrow">🌶️ Spice tolerance training</p>
+        <p class="eyebrow">Spice tolerance training</p>
         <h1>Train your taste buds, one bite at a time.</h1>
         <p class="hero-text">
           Spicy recommends foods matched to your heat lane, tracks how each meal felt,
@@ -28,7 +28,7 @@
           <a class="button primary" :href="discordUrl" target="_blank" rel="noopener noreferrer">Join Discord</a>
           <a class="button secondary" href="#howitworks">See how it works</a>
         </div>
-        <p class="hero-note">🔥 Join Discord for TestFlight access and launch updates.</p>
+        <p class="hero-note">Join Discord for TestFlight access and launch updates.</p>
         <dl class="hero-stats">
           <div>
             <dt>1–10</dt>
@@ -58,7 +58,7 @@
       </div>
       <div class="feature-bento">
         <article class="bento-card bento-large">
-          <p class="bento-label">🎯 Dynamic tolerance</p>
+          <p class="bento-label">Dynamic tolerance</p>
           <h3>Your heat lane changes as you log real meals.</h3>
           <p>
             Spicy learns from your perceived heat, reaction, recovery time, and notes so your
@@ -73,7 +73,7 @@
           </div>
         </article>
         <article class="bento-card bento-tall">
-          <p class="bento-label">🍜 Smart recommendation</p>
+          <p class="bento-label">Smart recommendation</p>
           <h3>One clear next food.</h3>
           <p>
             Get a dish that sits near your current lane instead of guessing from vague menu labels
@@ -135,7 +135,7 @@
       </div>
       <div class="curve-card">
         <div>
-          <p class="eyebrow">📈 Tolerance curve</p>
+          <p class="eyebrow">Tolerance curve</p>
           <h3>Progress should look steady, not spiky.</h3>
           <p>
             The goal is not to chase the hottest possible meal. Spicy helps you notice when your
@@ -156,7 +156,7 @@
 
     <section id="screens" class="section-shell screens-section">
       <div class="section-heading">
-        <p class="eyebrow">📱 Representative app previews</p>
+        <p class="eyebrow">Representative app previews</p>
         <h2>Food-first screens that show the core Spicy flow.</h2>
       </div>
       <div class="screen-grid">
@@ -168,7 +168,7 @@
 
     <section class="section-shell food-section">
       <div>
-        <p class="eyebrow">🍽️ Restaurant discovery</p>
+        <p class="eyebrow">Restaurant discovery</p>
         <h2>Find the dish worth trying before you order.</h2>
         <p>
           Browse community-rated spicy items, compare average heat, and submit new restaurant
@@ -190,7 +190,7 @@
 
     <section id="pricing" class="section-shell pricing-section">
       <div class="section-heading narrow">
-        <p class="eyebrow">💎 Pricing</p>
+        <p class="eyebrow">Pricing</p>
         <h2>Start free. Upgrade when you want deeper guidance.</h2>
       </div>
       <div class="pricing-grid">
@@ -208,7 +208,7 @@
           <a class="button secondary" :href="discordUrl" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         </article>
         <article class="price-card featured-price">
-          <p class="eyebrow">🔥 Most useful</p>
+          <p class="eyebrow">Most useful</p>
           <h3>Spicy Plus</h3>
           <p class="price">$4.99 <span>/ month</span></p>
           <p>More personalized coaching for people using Spicy regularly.</p>
@@ -242,7 +242,7 @@
 
     <section id="safety" class="section-shell safety-section">
       <div>
-        <p class="eyebrow">⚠️ Safety first</p>
+        <p class="eyebrow">Safety first</p>
         <h2>Spicy is guidance, not medical advice.</h2>
       </div>
       <p>
@@ -254,7 +254,7 @@
 
     <section id="faq" class="section-shell faq-section">
       <div class="section-heading narrow">
-        <p class="eyebrow">❓ FAQ</p>
+        <p class="eyebrow">FAQ</p>
         <h2>Good questions before the first bite.</h2>
       </div>
       <div class="faq-categories">
@@ -285,7 +285,7 @@
           <span class="brand-mark">S</span>
           <span>Spicy</span>
         </NuxtLink>
-        <p>Train your taste buds with practical recommendations and calm progress tracking. 🌶️</p>
+        <p>Train your taste buds with practical recommendations and calm progress tracking.</p>
       </div>
       <nav aria-label="Legal navigation">
         <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
@@ -307,7 +307,7 @@ const assetPath = (path: string) => `${appBase.replace(/\/$/, '')}${path}`
 const siteUrl = config.public.siteUrl.replace(/\/$/, '')
 const discordUrl = 'https://discord.gg/2n4uSk3Tqj'
 const xUrl = 'https://x.com/Spicylabs_'
-const pageTitle = 'Spicy | Train your spice tolerance, one bite at a time 🌶️'
+const pageTitle = 'Spicy | Train your spice tolerance, one bite at a time'
 const pageDescription =
   'Spicy is a mobile app for building spice tolerance with personalized food recommendations, heat logging, AI coach insights, restaurant discovery, and safety minded progress.'
 const pageUrl = `${siteUrl}/`
@@ -329,22 +329,22 @@ useSeoMeta({
 
 const features = [
   {
-    icon: '🧠 AI coach',
+    icon: 'AI coach',
     title: 'Coach insights',
     body: 'Turn recent logs into practical next targets, trends, and safety minded reminders.'
   },
   {
-    icon: '📸 Photo scan',
+    icon: 'Photo scan',
     title: 'Photo identification',
     body: 'Scan or upload a food photo to speed up logging with an AI assisted guess.'
   },
   {
-    icon: '🍽️ Restaurants',
+    icon: 'Restaurants',
     title: 'Restaurant discovery',
     body: 'Find approved spicy items near you with community heat ratings and item details.'
   },
   {
-    icon: '⚡ Quick log',
+    icon: 'Quick log',
     title: 'Fast meal logging',
     body: 'Capture heat, reaction, recovery time, notes, and source without turning dinner into homework.'
   }
@@ -398,22 +398,22 @@ const comparisonRows = [
 
 const faqCategories = [
   {
-    icon: '🚀',
+    icon: 'Getting started',
     title: 'Getting started',
     body: 'Assessment, onboarding, and your first recommendation.'
   },
   {
-    icon: '🌶️',
+    icon: 'Heat lane',
     title: 'Heat lane',
     body: 'How Spicy estimates tolerance and tracks progress.'
   },
   {
-    icon: '🔒',
+    icon: 'Privacy',
     title: 'Privacy',
     body: 'How food logs, photos, and account details are handled.'
   },
   {
-    icon: '💎',
+    icon: 'Spicy Plus',
     title: 'Spicy Plus',
     body: 'Subscription features, billing, and cancellation.'
   }
