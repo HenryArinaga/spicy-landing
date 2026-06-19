@@ -4,6 +4,9 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
+    "dev:variants": "bash ./run-all-variants.sh start",
+    "dev:variants:stop": "bash ./run-all-variants.sh stop",
+    "dev:variants:status": "bash ./run-all-variants.sh status",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
