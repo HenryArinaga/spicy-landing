@@ -61,10 +61,19 @@ prepare_worktree() {
   local dir="${WORKTREE_ROOT}/${branch}"
   local existing_dir=""
 
+  git -C "${ROOT_DIR}" worktree prune >/dev/null 2>&1 || true
+
   existing_dir="$(git -C "${ROOT_DIR}" worktree list --porcelain | awk -v branch="refs/heads/${branch}" '
     /^worktree / { path = substr($0, 10) }
     /^branch / && $2 == branch { print path; exit }
   ')"
+
+  if [[ "${existing_dir}" == "${dir}" && ! -d "${dir}/.git" ]]; then
+    git -C "${ROOT_DIR}" worktree remove --force "${dir}" >/dev/null 2>&1 || true
+    git -C "${ROOT_DIR}" worktree prune >/dev/null 2>&1 || true
+    rm -rf "${dir}"
+    existing_dir=""
+  fi
 
   if [[ -n "${existing_dir}" && "${existing_dir}" != "${dir}" ]]; then
     printf '%s\n' "${existing_dir}"
@@ -76,7 +85,7 @@ prepare_worktree() {
   fi
 
   if [[ ! -d "${dir}/.git" ]]; then
-    git -C "${ROOT_DIR}" worktree add "${dir}" "${branch}" >/dev/null
+    git -C "${ROOT_DIR}" worktree add -f "${dir}" "${branch}" >/dev/null
   else
     git -C "${dir}" fetch --all --prune >/dev/null 2>&1 || true
     git -C "${dir}" checkout "${branch}" >/dev/null
