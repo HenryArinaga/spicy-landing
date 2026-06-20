@@ -1,6 +1,12 @@
+node_modules
 .nuxt
 .output
-node_modules
-.variant-logs
-.variant-pids
-.variant-worktrees
+dist
+.data
+.env
+.env.*
+!.env.example
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
