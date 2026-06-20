@@ -44,6 +44,16 @@ stop_servers() {
     done < "${PID_FILE}"
     rm -f "${PID_FILE}"
   fi
+
+  for item in "${VARIANTS[@]}"; do
+    IFS=':' read -r port branch <<< "${item}"
+    while read -r pid; do
+      if [[ -n "${pid}" ]] && kill -0 "${pid}" 2>/dev/null; then
+        kill "${pid}" 2>/dev/null || true
+        printf 'Stopped stale listener on port %s (pid %s, %s)\n' "${port}" "${pid}" "${branch}"
+      fi
+    done < <(lsof -tiTCP:"${port}" -sTCP:LISTEN 2>/dev/null || true)
+  done
 }
 
 prepare_worktree() {
@@ -59,6 +69,10 @@ prepare_worktree() {
   if [[ -n "${existing_dir}" && "${existing_dir}" != "${dir}" ]]; then
     printf '%s\n' "${existing_dir}"
     return 0
+  fi
+
+  if [[ -e "${dir}" && ! -d "${dir}/.git" ]]; then
+    rm -rf "${dir}"
   fi
 
   if [[ ! -d "${dir}/.git" ]]; then
@@ -82,14 +96,19 @@ start_servers() {
 
     dir="$(prepare_worktree "${branch}")"
 
-    if [[ ! -d "${dir}/node_modules" ]]; then
+    if [[ ! -f "${dir}/package.json" ]]; then
+      printf 'Missing package.json in %s after preparing %s\n' "${dir}" "${branch}" >&2
+      exit 1
+    fi
+
+    if [[ ! -f "${dir}/node_modules/nuxt/package.json" ]]; then
       npm --prefix "${dir}" install
     fi
 
     printf 'Starting %s at http://localhost:%s\n' "${branch}" "${port}"
     (
       cd "${dir}"
-      PORT="${port}" npm run dev -- --host 127.0.0.1 --port "${port}"
+      PORT="${port}" npm run dev -- --host 127.0.0.1 --port "${port}" --strictPort
     ) > "${log_file}" 2>&1 &
 
     printf '%s %s %s\n' "$!" "${port}" "${branch}" >> "${PID_FILE}"
