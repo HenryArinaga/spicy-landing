@@ -2,7 +2,7 @@
   <article class="phone-frame">
     <div class="phone-status">
       <span>9:41</span>
-      <span>●●●</span>
+      <span>LTE</span>
     </div>
     <div v-if="screen === 'home'" class="phone-screen">
       <p class="phone-kicker">TODAY'S DASHBOARD</p>
@@ -24,7 +24,7 @@
         <div>
           <span>Comfort match</span>
           <strong>Chili garlic noodles</strong>
-          <small>Lane 5.1 · small step up</small>
+          <small>Lane 5.1, small step up</small>
         </div>
       </div>
       <div class="lane-row">
@@ -86,7 +86,7 @@
         <div class="phone-food restaurant-food"></div>
         <div>
           <strong>Chile crisp noodles</strong>
-          <span>7.4 heat · 86% match</span>
+          <span>7.4 heat, 86% match</span>
         </div>
       </div>
       <div class="mini-restaurant">
@@ -96,7 +96,7 @@
         ></div>
         <div>
           <strong>Roasted habanero sauce</strong>
-          <span>7.3 heat · 74% match</span>
+          <span>7.3 heat, 74% match</span>
         </div>
       </div>
       <button>Log Restaurant Food</button>
