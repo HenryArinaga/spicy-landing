@@ -3,7 +3,6 @@ const withBase = (path: string) => `${baseURL.replace(/\/$/, '')}${path}`
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@vueuse/motion/nuxt'],
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {

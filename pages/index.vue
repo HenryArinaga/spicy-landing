@@ -1,5 +1,5 @@
 <template>
-  <main data-motion-layer>
+  <main>
     <header class="site-nav">
       <NuxtLink class="brand" to="/">
         <span class="brand-mark">S</span>
@@ -17,7 +17,7 @@
     </header>
 
     <section class="hero section-shell">
-      <div v-motion="revealMotion(0, 18)" class="hero-copy">
+      <div class="hero-copy">
         <p class="eyebrow">Spice tolerance dashboard</p>
         <h1>Track heat, log meals, build tolerance with clear data.</h1>
         <p class="hero-text">
@@ -30,24 +30,23 @@
         </div>
         <p class="hero-note">Join Discord for TestFlight access and launch updates.</p>
         <dl class="hero-stats">
-          <div v-motion="revealMotion(0.1, 12)" :hovered="liftHover">
+          <div>
             <dt>4.8</dt>
             <dd>current heat lane</dd>
           </div>
-          <div v-motion="revealMotion(0.16, 12)" :hovered="liftHover">
+          <div>
             <dt>12</dt>
             <dd>logged meals this month</dd>
           </div>
-          <div v-motion="revealMotion(0.22, 12)" :hovered="liftHover">
+          <div>
             <dt>18m</dt>
             <dd>median recovery time</dd>
           </div>
         </dl>
       </div>
 
-      <div v-motion="revealMotion(0.08, 18)" class="hero-visual dashboard-visual" aria-label="Spicy app dashboard previews">
-        <HeatLaneLottie class="heat-lane-motion" />
-        <div v-motion="revealMotion(0.22, 16)" :hovered="liftHover" class="dashboard-card tolerance-card">
+      <div class="hero-visual dashboard-visual" aria-label="Spicy app dashboard previews">
+        <div class="dashboard-card tolerance-card">
           <div>
             <span>Weekly tolerance</span>
             <strong>+0.6</strong>
@@ -60,7 +59,7 @@
             <i style="height: 62%"></i>
           </div>
         </div>
-        <div v-motion="revealMotion(0.3, 16)" :hovered="liftHover" class="dashboard-card macro-card">
+        <div class="dashboard-card macro-card">
           <div class="progress-ring" style="--progress: 68">
             <span>68%</span>
           </div>
@@ -75,12 +74,12 @@
     </section>
 
     <section id="features" class="section-shell feature-band">
-      <div v-motion="revealMotion()" class="section-heading">
+      <div class="section-heading">
         <p class="eyebrow">Data-forward tolerance training</p>
         <h2>A calmer dashboard for what you ate, how it felt, and what to try next.</h2>
       </div>
       <div class="feature-bento">
-        <article v-motion="revealMotion(0.04)" :hovered="liftHover" class="bento-card bento-large">
+        <article class="bento-card bento-large">
           <p class="bento-label">Progress dashboard</p>
           <h3>See your current heat lane, trend, and recovery in one view.</h3>
           <p>
@@ -109,7 +108,7 @@
             <div class="meter"><span style="width: 48%"></span></div>
           </div>
         </article>
-        <article v-motion="revealMotion(0.1)" :hovered="liftHover" class="bento-card bento-tall">
+        <article class="bento-card bento-tall">
           <p class="bento-label">Next best meal</p>
           <h3>One clear recommendation with context.</h3>
           <p>
@@ -117,6 +116,10 @@
             like mild, medium, or hot.
           </p>
           <div class="recommendation-mini">
+            <img
+              :src="assetPath('/images/spicy-miso-ramen.jpg')"
+              alt="Spicy miso ramen with egg, chashu, scallions, and nori"
+            >
             <div class="match-score">92</div>
             <div>
               <strong>Spicy miso ramen</strong>
@@ -124,13 +127,7 @@
             </div>
           </div>
         </article>
-        <article
-          v-for="(feature, index) in features"
-          :key="feature.title"
-          v-motion="revealMotion(0.16 + index * 0.05)"
-          :hovered="liftHover"
-          class="bento-card"
-        >
+        <article v-for="feature in features" :key="feature.title" class="bento-card">
           <p class="bento-label">{{ feature.icon }}</p>
           <h3>{{ feature.title }}</h3>
           <p>{{ feature.body }}</p>
@@ -139,7 +136,7 @@
     </section>
 
     <section id="howitworks" class="section-shell steps-section">
-      <div v-motion="revealMotion()" class="section-heading narrow">
+      <div class="section-heading narrow">
         <p class="eyebrow">How it works</p>
         <h2>A simple logging loop that makes the next recommendation smarter.</h2>
         <p>
@@ -148,7 +145,7 @@
         </p>
       </div>
       <div class="timeline">
-        <article v-for="(step, index) in steps" :key="step.title" v-motion="revealMotion(index * 0.08)" class="step-card">
+        <article v-for="(step, index) in steps" :key="step.title" class="step-card">
           <div class="step-content">
             <span>0{{ index + 1 }}</span>
             <h3>{{ step.title }}</h3>
@@ -176,7 +173,7 @@
           </div>
         </article>
       </div>
-      <div v-motion="revealMotion()" :hovered="subtleHover" class="curve-card">
+      <div class="curve-card">
         <div>
           <p class="eyebrow">Tolerance curve</p>
           <h3>Progress should look steady, not spiky.</h3>
@@ -198,19 +195,19 @@
     </section>
 
     <section id="screens" class="section-shell screens-section">
-      <div v-motion="revealMotion()" class="section-heading">
+      <div class="section-heading">
         <p class="eyebrow">Representative app previews</p>
         <h2>Dashboard screens for recommendations, coaching, and restaurant decisions.</h2>
       </div>
       <div class="screen-grid">
-        <AppPhone v-motion="revealMotion(0.04)" screen="home" />
-        <AppPhone v-motion="revealMotion(0.12)" screen="coach" />
-        <AppPhone v-motion="revealMotion(0.2)" screen="restaurants" />
+        <AppPhone screen="home" />
+        <AppPhone screen="coach" />
+        <AppPhone screen="restaurants" />
       </div>
     </section>
 
     <section class="section-shell food-section">
-      <div v-motion="revealMotion()">
+      <div>
         <p class="eyebrow">Restaurant discovery</p>
         <h2>Compare heat data before you order.</h2>
         <p>
@@ -218,26 +215,26 @@
           then log the meal without starting from a blank form.
         </p>
       </div>
-      <div v-motion="revealMotion(0.1)" :hovered="subtleHover" class="restaurant-card">
+      <div class="restaurant-card">
         <img
-          :src="assetPath('/images/chile-crisp-noodles.png')"
-          alt="Chile crisp noodles with scallions and sesame seeds"
+          :src="assetPath('/images/spicy-miso-ramen.jpg')"
+          alt="Spicy miso ramen with egg, chashu, scallions, and nori"
         >
         <div>
           <p class="eyebrow">Community pick</p>
-          <h3>Chili crisp noodles</h3>
-          <p>Average heat 7.4 / 10, 86% match, estimated 42,000 SHU</p>
+          <h3>Spicy miso ramen</h3>
+          <p>Average heat 7.2 / 10, 88% match, rich broth with a steady burn.</p>
         </div>
       </div>
     </section>
 
     <section id="pricing" class="section-shell pricing-section">
-      <div v-motion="revealMotion()" class="section-heading narrow">
+      <div class="section-heading narrow">
         <p class="eyebrow">Pricing</p>
         <h2>Start free. Upgrade when you want deeper guidance.</h2>
       </div>
       <div class="pricing-grid">
-        <article v-motion="revealMotion(0.04)" :hovered="liftHover" class="price-card">
+        <article class="price-card">
           <h3>Free</h3>
           <p class="price">$0 <span>/ month</span></p>
           <p>Essential tools for finding your baseline and logging your first foods.</p>
@@ -250,7 +247,7 @@
           </ul>
           <a class="button secondary" :href="discordUrl" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
         </article>
-        <article v-motion="revealMotion(0.12)" :hovered="liftHover" class="price-card featured-price">
+        <article class="price-card featured-price">
           <p class="eyebrow">Most useful</p>
           <h3>Spicy Plus</h3>
           <p class="price">$4.99 <span>/ month</span></p>
@@ -265,7 +262,7 @@
           <a class="button primary" :href="discordUrl" target="_blank" rel="noopener noreferrer">Join Discord</a>
         </article>
       </div>
-      <div v-motion="revealMotion()" class="comparison-card">
+      <div class="comparison-card">
         <h3>Feature breakdown</h3>
         <div class="comparison-table">
           <div class="comparison-row heading">
@@ -283,7 +280,7 @@
       <p class="pricing-note">Pricing subject to change. App Store availability and subscription terms may vary.</p>
     </section>
 
-    <section id="safety" v-motion="revealMotion()" class="section-shell safety-section">
+    <section id="safety" class="section-shell safety-section">
       <div>
         <p class="eyebrow">Safety first</p>
         <h2>Spicy is guidance, not medical advice.</h2>
@@ -296,29 +293,24 @@
     </section>
 
     <section id="faq" class="section-shell faq-section">
-      <div v-motion="revealMotion()" class="section-heading narrow">
+      <div class="section-heading narrow">
         <p class="eyebrow">FAQ</p>
         <h2>Good questions before the first bite.</h2>
       </div>
       <div class="faq-categories">
-        <article
-          v-for="(category, index) in faqCategories"
-          :key="category.title"
-          v-motion="revealMotion(index * 0.05)"
-          :hovered="liftHover"
-        >
+        <article v-for="category in faqCategories" :key="category.title">
           <span>{{ category.icon }}</span>
           <h3>{{ category.title }}</h3>
           <p>{{ category.body }}</p>
         </article>
       </div>
       <div class="faq-list">
-        <details v-for="(item, index) in faqs" :key="item.question" v-motion="revealMotion(index * 0.04)">
+        <details v-for="item in faqs" :key="item.question">
           <summary>{{ item.question }}</summary>
           <p>{{ item.answer }}</p>
         </details>
       </div>
-      <div v-motion="revealMotion()" :hovered="subtleHover" class="support-card">
+      <div class="support-card">
         <div>
           <h3>Still have questions?</h3>
           <p>Reach out if something about your account, privacy, or subscription is unclear.</p>
@@ -359,42 +351,8 @@ const pageTitle = 'Spicy | Train your spice tolerance, one bite at a time'
 const pageDescription =
   'Spicy is a mobile app for building spice tolerance with personalized food recommendations, heat logging, AI coach insights, restaurant discovery, and safety minded progress.'
 const pageUrl = `${siteUrl}/`
-const ogImage = `${siteUrl}/images/chile-crisp-noodles.png`
+const ogImage = `${siteUrl}/images/spicy-miso-ramen.jpg`
 const logoImage = `${siteUrl}/images/spicy-app-icon.png`
-
-const motionEase = [0.2, 0.8, 0.2, 1]
-const revealMotion = (delay = 0, y = 22, scale = 0.99) => ({
-  initial: {
-    opacity: 0,
-    y,
-    scale
-  },
-  visibleOnce: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 650,
-      delay,
-      ease: motionEase
-    }
-  }
-})
-const liftHover = {
-  y: -4,
-  scale: 1.01,
-  transition: {
-    duration: 180,
-    ease: motionEase
-  }
-}
-const subtleHover = {
-  y: -3,
-  transition: {
-    duration: 180,
-    ease: motionEase
-  }
-}
 
 useSeoMeta({
   title: pageTitle,
@@ -403,7 +361,7 @@ useSeoMeta({
   ogDescription: pageDescription,
   ogUrl: pageUrl,
   ogImage,
-  ogImageAlt: 'Chile crisp noodles shown as a spicy food recommendation in Spicy',
+  ogImageAlt: 'Spicy miso ramen shown as a food recommendation in Spicy',
   twitterTitle: pageTitle,
   twitterDescription: pageDescription,
   twitterImage: ogImage
@@ -602,5 +560,52 @@ useHead({
       ])
     }
   ]
+})
+
+onMounted(() => {
+  const animatedItems = document.querySelectorAll(
+    [
+      '.hero-copy',
+      '.hero-visual',
+      '.feature-bento > *',
+      '.timeline .step-card',
+      '.curve-card',
+      '.screen-grid > *',
+      '.food-section > *',
+      '.pricing-grid > *',
+      '.comparison-card',
+      '.safety-section',
+      '.faq-categories > *',
+      '.faq-list details',
+      '.support-card'
+    ].join(', ')
+  )
+
+  if (!('IntersectionObserver' in window)) {
+    animatedItems.forEach((item) => item.classList.add('is-visible'))
+    return
+  }
+
+  animatedItems.forEach((item, index) => {
+    item.classList.add('reveal')
+    ;(item as HTMLElement).style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`)
+  })
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    {
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px'
+    }
+  )
+
+  animatedItems.forEach((item) => observer.observe(item))
 })
 </script>

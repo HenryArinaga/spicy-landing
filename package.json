@@ -9,9 +9,8 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@vueuse/motion": "^3.0.3",
-    "lottie-web": "^5.13.0",
     "nuxt": "^3.12.0",
     "vue": "^3.4.0"
-  }
+  },
+  "devDependencies": {}
 }
