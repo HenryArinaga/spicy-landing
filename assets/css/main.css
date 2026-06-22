@@ -27,9 +27,24 @@ html {
 body {
   margin: 0;
   background:
+    radial-gradient(circle at 14% 8%, rgba(255, 117, 56, 0.16), transparent 32%),
+    radial-gradient(circle at 84% 10%, rgba(156, 31, 20, 0.1), transparent 28%),
+    radial-gradient(circle at 52% 42%, rgba(255, 179, 128, 0.13), transparent 34%),
     linear-gradient(180deg, #fffaf5 0%, var(--bg) 46%, #f8e9df 100%);
   color: var(--text);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(86, 34, 19, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(86, 34, 19, 0.026) 1px, transparent 1px);
+  background-size: 44px 44px;
+  content: "";
+  pointer-events: none;
 }
 
 a {
@@ -126,6 +141,11 @@ img {
   padding: 0 18px;
   font-weight: 850;
   text-decoration: none;
+  transform-origin: center;
+  transition:
+    transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 180ms ease,
+    background 180ms ease;
 }
 
 .nav-cta,
@@ -139,6 +159,11 @@ img {
   background: var(--surface-strong);
   border: 1px solid var(--line);
   color: var(--text);
+}
+
+.nav-cta:active,
+.button:active {
+  transform: scale(0.97);
 }
 
 .section-shell {
@@ -270,10 +295,12 @@ details {
   border: 1px solid rgba(232, 204, 194, 0.9);
   border-radius: 34px;
   background:
+    radial-gradient(circle at 74% 16%, rgba(255, 117, 56, 0.16), transparent 30%),
+    radial-gradient(circle at 18% 84%, rgba(156, 31, 20, 0.1), transparent 34%),
     linear-gradient(to right, rgba(232, 204, 194, 0.42) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(232, 204, 194, 0.36) 1px, transparent 1px),
     rgba(255, 250, 245, 0.72);
-  background-size: 72px 72px;
+  background-size: auto, auto, 72px 72px, 72px 72px, auto;
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -315,10 +342,11 @@ details {
 }
 
 .phone-side {
+  --phone-side-scale: 0.86;
   position: absolute;
   right: 12px;
   bottom: 82px;
-  transform: scale(0.86);
+  transform: scale(var(--phone-side-scale));
   transform-origin: bottom right;
 }
 
@@ -365,11 +393,11 @@ details {
 }
 
 .home-food {
-  background-image: url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=700&q=80');
+  background-image: url('/images/spicy-miso-ramen.jpg');
 }
 
 .restaurant-food {
-  background-image: url('https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=600&q=80');
+  background-image: url('/images/spicy-miso-ramen.jpg');
 }
 
 .sauce-food {
@@ -744,6 +772,19 @@ label {
   padding: 12px;
 }
 
+.recommendation-mini {
+  flex-wrap: wrap;
+}
+
+.recommendation-mini img {
+  width: 100%;
+  height: 180px;
+  flex: 0 0 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 14px 30px rgba(86, 34, 19, 0.14);
+}
+
 .match-score {
   display: grid;
   width: 64px;
@@ -773,7 +814,7 @@ label {
 }
 
 .mini-photo.ramen {
-  background-image: url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80');
+  background-image: url('/images/spicy-miso-ramen.jpg');
 }
 
 .mini-photo.tacos {
@@ -1078,7 +1119,7 @@ li {
 }
 
 li::before {
-  content: "•";
+  content: "✓";
   margin-right: 8px;
   color: var(--green);
   font-weight: 950;
@@ -1290,6 +1331,63 @@ details p {
   font-size: 14px;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .nav-cta:hover,
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .bento-card:hover,
+  .restaurant-card:hover,
+  .price-card:hover,
+  .support-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 58px rgba(86, 34, 19, 0.16);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .phone-main {
+    animation: phone-breathe 7.5s ease-in-out infinite;
+  }
+
+  .phone-side {
+    animation: phone-side-breathe 8.5s ease-in-out 700ms infinite;
+  }
+
+  .dashboard-card,
+  .bento-card,
+  .restaurant-card,
+  .price-card,
+  .support-card {
+    transition:
+      transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 220ms ease;
+  }
+}
+
+@keyframes phone-breathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes phone-side-breathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(var(--phone-side-scale));
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0) scale(var(--phone-side-scale));
+  }
+}
+
 @media (max-width: 980px) {
   .site-nav nav {
     display: none;
@@ -1461,9 +1559,10 @@ details p {
   }
 
   .phone-side {
+    --phone-side-scale: 0.72;
     right: 0;
     bottom: 20px;
-    transform: scale(0.72);
+    transform: scale(var(--phone-side-scale));
   }
 
   .site-footer {
