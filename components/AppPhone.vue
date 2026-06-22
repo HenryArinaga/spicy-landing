@@ -23,8 +23,8 @@
         </div>
         <div>
           <span>Comfort match</span>
-          <strong>Chili garlic noodles</strong>
-          <small>Lane 5.1 · small step up</small>
+          <strong>Spicy miso ramen</strong>
+          <small>Lane 5.1, small step up</small>
         </div>
       </div>
       <div class="lane-row">
@@ -36,7 +36,7 @@
     </div>
     <div v-else-if="screen === 'log'" class="phone-screen">
       <p class="phone-kicker">LOG FOOD</p>
-      <h3>Chili garlic noodles</h3>
+      <h3>Spicy miso ramen</h3>
       <div class="log-card">
         <span>Perceived heat</span>
         <strong>6.5</strong>
@@ -85,8 +85,8 @@
       <div class="mini-restaurant">
         <div class="phone-food restaurant-food"></div>
         <div>
-          <strong>Chile crisp noodles</strong>
-          <span>7.4 heat · 86% match</span>
+          <strong>Spicy miso ramen</strong>
+          <span>7.2 heat, 88% match</span>
         </div>
       </div>
       <div class="mini-restaurant">
@@ -96,7 +96,7 @@
         ></div>
         <div>
           <strong>Roasted habanero sauce</strong>
-          <span>7.3 heat · 74% match</span>
+          <span>7.3 heat, 74% match</span>
         </div>
       </div>
       <button>Log Restaurant Food</button>

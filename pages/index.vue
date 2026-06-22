@@ -116,10 +116,14 @@
             like mild, medium, or hot.
           </p>
           <div class="recommendation-mini">
+            <img
+              :src="assetPath('/images/spicy-miso-ramen.jpg')"
+              alt="Spicy miso ramen with egg, chashu, scallions, and nori"
+            >
             <div class="match-score">92</div>
             <div>
               <strong>Spicy miso ramen</strong>
-              <span>Good match · lane 5.1 · +0.3 step</span>
+              <span>Good match, lane 5.1, +0.3 step</span>
             </div>
           </div>
         </article>
@@ -213,13 +217,13 @@
       </div>
       <div class="restaurant-card">
         <img
-          :src="assetPath('/images/chile-crisp-noodles.png')"
-          alt="Chile crisp noodles with scallions and sesame seeds"
+          :src="assetPath('/images/spicy-miso-ramen.jpg')"
+          alt="Spicy miso ramen with egg, chashu, scallions, and nori"
         >
         <div>
           <p class="eyebrow">Community pick</p>
-          <h3>Chili crisp noodles</h3>
-          <p>Average heat 7.4 / 10 · 86% match · estimated 42,000 SHU</p>
+          <h3>Spicy miso ramen</h3>
+          <p>Average heat 7.2 / 10, 88% match, rich broth with a steady burn.</p>
         </div>
       </div>
     </section>
@@ -347,7 +351,7 @@ const pageTitle = 'Spicy | Train your spice tolerance, one bite at a time'
 const pageDescription =
   'Spicy is a mobile app for building spice tolerance with personalized food recommendations, heat logging, AI coach insights, restaurant discovery, and safety minded progress.'
 const pageUrl = `${siteUrl}/`
-const ogImage = `${siteUrl}/images/chile-crisp-noodles.png`
+const ogImage = `${siteUrl}/images/spicy-miso-ramen.jpg`
 const logoImage = `${siteUrl}/images/spicy-app-icon.png`
 
 useSeoMeta({
@@ -357,7 +361,7 @@ useSeoMeta({
   ogDescription: pageDescription,
   ogUrl: pageUrl,
   ogImage,
-  ogImageAlt: 'Chile crisp noodles shown as a spicy food recommendation in Spicy',
+  ogImageAlt: 'Spicy miso ramen shown as a food recommendation in Spicy',
   twitterTitle: pageTitle,
   twitterDescription: pageDescription,
   twitterImage: ogImage
